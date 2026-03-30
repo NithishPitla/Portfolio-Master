@@ -1,0 +1,111 @@
+Create a modern, professional portfolio website for a Senior Full Stack Developer with 9+ years of experience.
+
+Tech stack:
+- React with Next.js (App Router)
+- Tailwind CSS for styling
+- Framer Motion for animations
+- Optional: React Three Fiber for a subtle 3D hero section (keep it lightweight and professional)
+
+Design requirements:
+- Clean, minimal, enterprise-style UI (not overly flashy)
+- Fully responsive (mobile + desktop)
+- Fast loading and optimized
+- Use a neutral professional color palette (dark + light mode toggle)
+- Smooth scroll and subtle animations
+
+Website structure:
+
+1. Hero Section
+- Name: Nithish Pitla
+- Title: Senior Full Stack Developer (React + Node.js + Azure)
+- Tagline: "I build scalable, high-performance web applications and backend systems"
+- CTA buttons:
+  - "View Projects"
+  - "Download Resume"
+- Optional: subtle 3D or animated background (not distracting)
+
+2. About Section
+- Short professional summary (3–4 lines)
+- Highlight:
+  - 9+ years experience
+  - Expertise in React, Node.js, PostgreSQL, Azure
+  - Focus on scalable architecture and performance
+
+3. Skills Section (well-structured)
+- Frontend: React, Material UI, React Three Fiber
+- Backend: Node.js, Express.js, REST APIs, JWT Authentication
+- Database: PostgreSQL
+- Cloud: Azure (Blob Storage, OpenAI)
+- Concepts: System Design, Performance Optimization
+
+4. Projects Section (most important)
+Create 4 project cards with details:
+
+Project 1: Dossier Digi Locker
+- Description: Secure document management system
+- Tech: React, Node.js, Azure Blob Storage
+- Impact:
+  - 99.9% uptime
+  - 35% performance improvement
+
+Project 2: Safe Spaces Platform
+- Description: Workplace safety and compliance platform
+- Features: dashboards, analytics, risk prediction
+
+Project 3: GenAI Performance Management System
+- Description: AI-based appraisal feedback system
+- Tech: Azure OpenAI
+- Impact: improved HR efficiency by 40%
+
+Project 4: Mentor-Mentee Platform
+- Description: mentorship platform with analytics
+- Impact: 30% increase in engagement
+
+Each project should have:
+- Title
+- Description
+- Tech stack
+- Impact metrics
+- Placeholder for live demo and GitHub link
+
+5. System Design Section (important for senior role)
+- Title: "How I Design Scalable Systems"
+- Include:
+  - Simple architecture diagram (frontend, backend, database, cloud)
+  - Explanation of API design, scalability, and performance optimization
+
+6. Experience Section
+- Timeline layout
+- Show key roles:
+  - Hexaware Technologies (Senior Full Stack Developer / Product Lead)
+  - GGS Technologies
+  - Others summarized briefly
+- Focus on impact, not long text
+
+7. Contact Section
+- Email
+- LinkedIn
+- CTA: "Let’s build something impactful together"
+
+8. Extra Features
+- Dark/light mode toggle
+- Sticky navbar
+- Smooth scrolling
+- SEO meta tags
+- Clean folder structure
+
+Important instructions:
+- Keep content concise and recruiter-friendly
+- Prioritize readability over heavy animations
+- Code should be clean, modular, and production-ready
+- Use reusable components
+- Add placeholder images/icons where needed
+- Ensure accessibility (proper contrast, semantic HTML)
+
+Bonus:
+- Add a “Download Resume” button (dummy PDF link)
+- Add hover animations on project cards
+- Add loading skeleton or subtle page transition
+
+Goal:
+This portfolio should impress recruiters within 10 seconds and clearly show senior-level experience, backend strength, and real-world impact.

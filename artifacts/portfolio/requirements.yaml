@@ -1,0 +1,13 @@
+packages:
+  "framer-motion": "For smooth scroll animations, section transitions, and interactive hover effects"
+  "react-hook-form": "For contact form state management and validation"
+  "@hookform/resolvers": "Zod validation resolver for the contact form"
+
+images:
+  - path: "artifacts/portfolio/public/images/hero-bg.png"
+    description: "Dark, sleek, abstract gradient mesh background in deep slate blue and subtle purple hues. Enterprise professional, futuristic, clean. 4k resolution."
+    aspect_ratio: "16:9"
+
+notes:
+  - "This is a static portfolio site, so no real backend API is required. Mutations like contact form submission are simulated using Promises and setTimeout."
+  - "Using pure CSS anchor linking for smooth scroll instead of routing for section navigation."
