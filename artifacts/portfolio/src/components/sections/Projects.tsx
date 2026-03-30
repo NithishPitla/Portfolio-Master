@@ -1,16 +1,17 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useMotionValue, useTransform } from "framer-motion";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, FolderGit2, X } from "lucide-react";
-import { useState, useEffect } from "react";
+import { Github, FolderGit2, X, ShieldCheck, BarChart3, Brain, Users } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 
 const projects = [
   {
     title: "Dossier Digi Locker",
     description: "A secure, highly available document management system designed for enterprise compliance and rapid retrieval.",
-    impact: "Achieved 99.9% uptime and improved document retrieval performance by 35%.",
+    impact: "99.9% uptime · 35% faster retrieval",
+    thumbnail: { gradient: "from-blue-600/80 via-cyan-500/60 to-indigo-700/80", icon: ShieldCheck, label: "Document Security" },
     tags: ["React", "Node.js", "Azure Blob", "PostgreSQL", "Security"],
     demoLink: "#",
     githubLink: "#",
@@ -28,7 +29,8 @@ const projects = [
   {
     title: "Safe Spaces Platform",
     description: "Comprehensive workplace safety and compliance platform with real-time dashboards and risk prediction ML integrations.",
-    impact: "Deployed to 10k+ users, reducing reporting latency by 50%.",
+    impact: "10k+ users · 50% less reporting latency",
+    thumbnail: { gradient: "from-emerald-600/80 via-teal-500/60 to-green-700/80", icon: BarChart3, label: "Safety Analytics" },
     tags: ["React", "Node.js", "PostgreSQL", "Analytics", "Compliance"],
     demoLink: "#",
     githubLink: "#",
@@ -45,7 +47,8 @@ const projects = [
   {
     title: "GenAI Performance Management",
     description: "AI-powered employee appraisal system utilizing advanced language models to generate constructive feedback and summaries.",
-    impact: "Improved HR workflow efficiency by 40% globally.",
+    impact: "40% HR efficiency gain · 5k+ appraisals",
+    thumbnail: { gradient: "from-violet-600/80 via-purple-500/60 to-fuchsia-700/80", icon: Brain, label: "AI / HR Tech" },
     tags: ["React", "Node.js", "Azure OpenAI", "GPT-4", "HR Tech"],
     demoLink: "#",
     githubLink: "#",
@@ -62,7 +65,8 @@ const projects = [
   {
     title: "Mentor-Mentee Matching Platform",
     description: "Enterprise application facilitating algorithmic matching of mentors with mentees based on skills, goals, and capacity.",
-    impact: "Drove a 30% increase in active mentorship engagement across the organization.",
+    impact: "30% engagement boost · 500+ matches",
+    thumbnail: { gradient: "from-orange-600/80 via-amber-500/60 to-yellow-600/80", icon: Users, label: "EdTech / Mentorship" },
     tags: ["React", "Node.js", "PostgreSQL", "Algorithms", "EdTech"],
     demoLink: "#",
     githubLink: "#",
@@ -79,44 +83,73 @@ const projects = [
 ];
 
 function ProjectCard({ project, onViewCaseStudy }: { project: typeof projects[0], onViewCaseStudy: () => void }) {
-  const [isHovered, setIsHovered] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const rotateX = useTransform(y, [-80, 80], [6, -6]);
+  const rotateY = useTransform(x, [-80, 80], [-6, 6]);
+  const ThumbnailIcon = project.thumbnail.icon;
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    x.set(e.clientX - rect.left - rect.width / 2);
+    y.set(e.clientY - rect.top - rect.height / 2);
+  };
+  const handleMouseLeave = () => { x.set(0); y.set(0); };
 
   return (
-    <motion.div className="h-full conic-border rounded-xl">
-      <div
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        className="h-full relative transition-all duration-300"
-      >
-        <Card className="h-full flex flex-col glass-card group overflow-hidden border-border/40 hover:border-primary/50 bg-card relative z-10">
-          <CardContent className="p-8 flex-1 relative z-10">
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
-              <FolderGit2 className="w-6 h-6 text-primary" />
-            </div>
-            <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">{project.title}</h3>
-            <p className="text-muted-foreground mb-4 leading-relaxed">
-              {project.description}
-            </p>
-            <div className="flex flex-wrap gap-2 mt-auto pb-4">
-              {project.tags.map(tag => (
-                <Badge key={tag} variant="outline" className="bg-background/50 backdrop-blur-sm">
-                  {tag}
-                </Badge>
-              ))}
-            </div>
-          </CardContent>
-          <CardFooter className="px-8 pb-8 pt-0 flex gap-4 relative z-10">
-            <Button variant="default" size="sm" onClick={onViewCaseStudy} className="rounded-full px-6">
-              View Case Study
-            </Button>
-            <Button variant="outline" size="sm" asChild className="rounded-full px-6 bg-background">
-              <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                GitHub <Github className="w-4 h-4 ml-2" />
-              </a>
-            </Button>
-          </CardFooter>
-        </Card>
-      </div>
+    <motion.div
+      ref={cardRef}
+      className="h-full"
+      style={{ rotateX, rotateY, transformStyle: "preserve-3d", perspective: 1000 }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      whileHover={{ scale: 1.02 }}
+      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+    >
+      <Card className="h-full flex flex-col glass-card group overflow-hidden border-border/40 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 bg-card transition-all duration-300">
+        {/* Gradient Thumbnail Header */}
+        <div className={`relative h-36 bg-gradient-to-br ${project.thumbnail.gradient} overflow-hidden flex-shrink-0`}>
+          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <ThumbnailIcon className="w-16 h-16 text-white/30 stroke-1" />
+          </div>
+          <div className="absolute bottom-0 left-0 right-0 p-4 flex items-end justify-between">
+            <span className="text-white/80 text-xs font-semibold tracking-widest uppercase">{project.thumbnail.label}</span>
+            <span className="text-white/90 text-xs font-bold bg-black/30 backdrop-blur-sm px-2.5 py-1 rounded-full border border-white/20">
+              {project.impact}
+            </span>
+          </div>
+          <div className="absolute top-3 left-3">
+            <FolderGit2 className="w-5 h-5 text-white/60" />
+          </div>
+        </div>
+
+        <CardContent className="p-6 flex-1">
+          <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
+          <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+            {project.description}
+          </p>
+          <div className="flex flex-wrap gap-1.5">
+            {project.tags.map(tag => (
+              <Badge key={tag} variant="outline" className="text-xs bg-background/50 backdrop-blur-sm">
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        </CardContent>
+        <CardFooter className="px-6 pb-6 pt-0 flex gap-3">
+          <Button variant="default" size="sm" onClick={onViewCaseStudy} className="rounded-full px-5 text-sm flex-1">
+            View Case Study
+          </Button>
+          <Button variant="outline" size="sm" asChild className="rounded-full px-4 bg-background">
+            <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+              <Github className="w-4 h-4" />
+            </a>
+          </Button>
+        </CardFooter>
+      </Card>
     </motion.div>
   );
 }

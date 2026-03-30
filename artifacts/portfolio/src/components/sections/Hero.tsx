@@ -90,10 +90,23 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="text-xl sm:text-2xl text-muted-foreground mb-10 max-w-2xl leading-relaxed"
+              className="text-xl sm:text-2xl text-muted-foreground mb-4 max-w-2xl leading-relaxed"
             >
-              I build scalable, high-performance web applications and robust backend systems using React, Node.js, and Azure.
+              9+ years delivering enterprise-grade React, Node.js &amp; Azure applications at scale.
             </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.65 }}
+              className="flex flex-wrap gap-2 mb-10"
+            >
+              {["Performance Optimization", "Scalable Architecture", "Backend Systems", "Azure Cloud"].map((s) => (
+                <span key={s} className="text-xs font-semibold px-3 py-1.5 rounded-full border border-primary/30 bg-primary/8 text-primary tracking-wide">
+                  {s}
+                </span>
+              ))}
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
