@@ -189,3 +189,101 @@
     @apply bg-card/60 backdrop-blur-xl border border-border/50 shadow-2xl shadow-black/5;
   }
 }
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotate-border {
+  from { --angle: 0deg; }
+  to { --angle: 360deg; }
+}
+
+@keyframes pulse-border {
+  0%, 100% { border-color: rgba(255, 255, 255, 0.1); box-shadow: 0 0 0 0 rgba(var(--primary), 0); }
+  50% { border-color: hsl(var(--primary)); box-shadow: 0 0 10px 0 hsl(var(--primary)); }
+}
+
+@keyframes flow-x {
+  0% { transform: translateX(-10px); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateX(calc(100% + 10px)); opacity: 0; }
+}
+
+@keyframes flow-y {
+  0% { transform: translateY(-10px); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateY(calc(100% + 10px)); opacity: 0; }
+}
+
+@layer utilities {
+  .animate-pulse-border {
+    animation: pulse-border 2s infinite;
+  }
+  
+  .shimmer-button {
+    position: relative;
+    overflow: hidden;
+  }
+  .shimmer-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease-in-out;
+  }
+  .shimmer-button:hover::after {
+    left: 100%;
+  }
+
+  .conic-border {
+    position: relative;
+  }
+  .conic-border::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    z-index: -1;
+    border-radius: inherit;
+    background: conic-gradient(from var(--angle), transparent 60%, hsl(var(--primary)) 80%, transparent 100%);
+    animation: rotate-border 3s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .conic-border:hover::after {
+    opacity: 1;
+  }
+
+  .flowing-dot-x {
+    position: absolute;
+    top: -2.5px;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    background-color: hsl(var(--primary));
+    border-radius: 50%;
+    box-shadow: 0 0 8px 2px hsl(var(--primary) / 0.8);
+    animation: flow-x 2s linear infinite;
+    z-index: 20;
+  }
+
+  .flowing-dot-y {
+    position: absolute;
+    left: -2.5px;
+    top: 0;
+    width: 6px;
+    height: 6px;
+    background-color: hsl(var(--primary));
+    border-radius: 50%;
+    box-shadow: 0 0 8px 2px hsl(var(--primary) / 0.8);
+    animation: flow-y 2s linear infinite;
+    z-index: 20;
+  }
+}
