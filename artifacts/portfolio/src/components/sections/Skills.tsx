@@ -1,33 +1,33 @@
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Layout, Server, Database, Cloud, Cog } from "lucide-react";
+import { Monitor, Server, Database, Cloud, GitBranch } from "lucide-react";
 
 const skillCategories = [
   {
     title: "Frontend Development",
-    icon: Layout,
-    skills: ["React 19", "TypeScript", "Next.js", "Material UI", "Tailwind CSS", "React Three Fiber", "Redux", "Zustand"]
+    icon: Monitor,
+    skills: ["⚛️ React 19", "📘 TypeScript", "▲ Next.js", "🎨 Material UI", "🌊 Tailwind CSS", "🧊 React Three Fiber", "🔄 Redux", "🐻 Zustand"]
   },
   {
     title: "Backend Development",
     icon: Server,
-    skills: ["Node.js", "Express.js", "REST APIs", "GraphQL", "JWT Auth", "Microservices", "WebSockets"]
+    skills: ["🟢 Node.js", "🚂 Express.js", "🔌 REST APIs", "🕸️ GraphQL", "🔑 JWT Auth", "🧱 Microservices", "⚡ WebSockets"]
   },
   {
     title: "Database & Storage",
     icon: Database,
-    skills: ["PostgreSQL", "MongoDB", "Redis", "Azure SQL", "Prisma", "Drizzle ORM"]
+    skills: ["🐘 PostgreSQL", "🍃 MongoDB", "🔴 Redis", "☁️ Azure SQL", " Prisma", "💧 Drizzle ORM"]
   },
   {
     title: "Cloud & DevOps",
     icon: Cloud,
-    skills: ["Microsoft Azure", "Azure Blob Storage", "Azure Functions", "Azure OpenAI", "Docker", "CI/CD", "GitHub Actions"]
+    skills: ["☁️ Microsoft Azure", "📦 Azure Blob Storage", "⚡ Azure Functions", "🧠 Azure OpenAI", "🐳 Docker", "🔄 CI/CD", "🐙 GitHub Actions"]
   },
   {
     title: "Architecture & Concepts",
-    icon: Cog,
-    skills: ["System Design", "Scalability", "Performance Optimization", "TDD", "Agile/Scrum", "Security Best Practices"]
+    icon: GitBranch,
+    skills: ["📐 System Design", "📈 Scalability", "⚡ Performance Optimization", "🧪 TDD", "🏃 Agile/Scrum", "🔒 Security Best Practices"]
   }
 ];
 

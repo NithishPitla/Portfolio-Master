@@ -5,6 +5,7 @@ const experiences = [
   {
     role: "Senior Full Stack Developer / Product Lead",
     company: "Hexaware Technologies",
+    logoText: "HT",
     period: "2020 - Present",
     achievements: [
       "Led a 4-person engineering team to deliver 3 mission-critical enterprise applications.",
@@ -16,6 +17,7 @@ const experiences = [
   {
     role: "Full Stack Developer",
     company: "GGS Technologies",
+    logoText: "GG",
     period: "2018 - 2020",
     achievements: [
       "Built and maintained scalable REST APIs using Node.js and Express.",
@@ -27,6 +29,7 @@ const experiences = [
   {
     role: "Junior Developer",
     company: "Various Startups",
+    logoText: "🚀",
     period: "2015 - 2018",
     achievements: [
       "Developed interactive UI components and widgets.",
@@ -75,21 +78,29 @@ export function Experience() {
                 <div className={`w-1.5 h-1.5 rounded-full bg-primary ${idx === 0 ? 'animate-ping' : ''}`} />
               </div>
               
-              <div className="bg-card glass-card rounded-2xl p-6 border border-border/50 hover:border-primary/30 transition-colors">
-                <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
-                  <div>
+              <div className="bg-card glass-card rounded-2xl p-6 md:p-8 border border-border/50 hover:border-primary/30 transition-colors relative">
+                
+                <div className="flex flex-col md:flex-row justify-between mb-6 gap-4">
+                  <div className="pr-14 md:pr-0">
                     <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
                       <Briefcase className="w-5 h-5 text-primary" />
                       {exp.role}
                     </h3>
-                    <p className="text-lg text-accent font-medium">{exp.company}</p>
+                    <p className="text-lg text-accent font-medium mt-1">{exp.company}</p>
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-muted text-muted-foreground whitespace-nowrap mt-3">
+                      {exp.period}
+                    </span>
                   </div>
-                  <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-muted text-muted-foreground whitespace-nowrap">
-                    {exp.period}
-                  </span>
+                  
+                  {/* Company Logo Placeholder */}
+                  <div className="absolute top-6 right-6 md:relative md:top-0 md:right-0">
+                    <div className="w-12 h-12 rounded-xl bg-muted text-foreground text-lg font-black border border-border flex items-center justify-center shadow-sm">
+                      {exp.logoText}
+                    </div>
+                  </div>
                 </div>
                 
-                <ul className="space-y-3 mt-6">
+                <ul className="space-y-3 mt-6 pt-6 border-t border-border/50">
                   {exp.achievements.map((achievement, i) => (
                     <motion.li 
                       key={i} 

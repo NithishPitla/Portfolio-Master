@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MonitorSmartphone, ArrowRight, ServerCog, Database, Cloud } from "lucide-react";
+import { MonitorSmartphone, ArrowRight, ServerCog, Database, Cloud, ShieldCheck, Gauge, Network } from "lucide-react";
 
 export function SystemDesign() {
   return (
@@ -14,13 +14,13 @@ export function SystemDesign() {
         >
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">How I Design Scalable Systems</h2>
           <div className="w-20 h-1.5 bg-primary rounded-full mx-auto mb-6" />
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             My architectural approach prioritizes separation of concerns, high availability, and performance.
           </p>
         </motion.div>
 
         {/* Visual Architecture Diagram */}
-        <div className="py-12 relative">
+        <div className="py-12 relative mb-16">
           <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8 max-w-5xl mx-auto">
             
             {/* Client */}
@@ -131,20 +131,24 @@ export function SystemDesign() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { title: "API Design", desc: "RESTful principles with strict validation (Zod), rate limiting, and structured JSON logging." },
-            { title: "Scalability", desc: "Stateless microservices architecture ready for horizontal scaling behind load balancers." },
-            { title: "Performance", desc: "Query optimization, aggressive caching with Redis, and minimal bundle sizes on the frontend." }
+            { icon: Network, title: "API Design", desc: "RESTful principles with strict validation (Zod), rate limiting, and structured JSON logging." },
+            { icon: Cloud, title: "Scalability", desc: "Stateless microservices architecture ready for horizontal scaling behind load balancers." },
+            { icon: Gauge, title: "Performance", desc: "Query optimization, aggressive caching with Redis, and minimal bundle sizes on the frontend." },
+            { icon: ShieldCheck, title: "Security", desc: "End-to-end encryption, JWT auth, Azure RBAC, and Zod schema validation at every API boundary." }
           ].map((pillar, i) => (
             <motion.div 
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 + 1 }}
-              className="text-center px-4"
+              transition={{ delay: i * 0.1 }}
+              className="bg-card/50 backdrop-blur border border-border/50 p-6 rounded-2xl hover:border-primary/50 hover:-translate-y-1 transition-all duration-300 shadow-sm"
             >
+              <div className="w-12 h-12 rounded-xl bg-muted/50 flex items-center justify-center mb-4 text-primary">
+                <pillar.icon className="w-6 h-6" />
+              </div>
               <h4 className="text-lg font-bold text-foreground mb-2">{pillar.title}</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">{pillar.desc}</p>
             </motion.div>
