@@ -25,20 +25,17 @@ export function Footer() {
           </p>
           
           <div className="flex items-center gap-4">
-            <a href="mailto:nithish.pitla@example.com" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
+            <a href="mailto:nithishpitla21@gmail.com" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
               <Mail className="w-5 h-5" />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
+            <a href="https://www.linkedin.com/in/nithish-pitla/" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
               <Linkedin className="w-5 h-5" />
             </a>
-            <a href="https://github.com" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
+            {/* <a href="https://github.com" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
               <Github className="w-5 h-5" />
-            </a>
+            </a> */}
           </div>
 
-          <p className="text-muted-foreground text-sm flex items-center gap-1 font-medium">
-            Designed & Built with <span className="text-accent px-1">♥</span> using React & Tailwind
-          </p>
         </div>
       </div>
     </footer>

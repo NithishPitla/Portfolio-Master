@@ -56,9 +56,14 @@ export function Navbar() {
           <div className="flex-shrink-0 flex items-center gap-2">
             <a
               href="#"
-              className="text-2xl font-display font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent"
+              className="inline-flex items-center"
+              aria-label="Go to top"
             >
-              NP.
+              <img
+                src="/images/ProfilePicture.jpeg"
+                alt="Nithish Pitla"
+                className="h-12 w-12 rounded-full object-cover ring-2 ring-primary/30"
+              />
             </a>
           </div>
 

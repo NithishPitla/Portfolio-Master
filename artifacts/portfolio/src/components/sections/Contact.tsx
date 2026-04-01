@@ -58,34 +58,34 @@ export function Contact() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-2 space-y-8"
+            className="lg:col-span-5 space-y-8"
           >
             <div>
               <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
-              <div className="space-y-6">
-                <a href="mailto:nithish.pitla@example.com" className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-6">
+                <a href="mailto:nithish.pitla@example.com" className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group whitespace-nowrap">
                   <div className="w-12 h-12 rounded-full bg-background border border-border flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary/5 transition-all">
                     <Mail className="w-5 h-5" />
                   </div>
-                  <span className="text-lg">nithish.pitla@example.com</span>
+                  <span className="text-lg">nithishpitla21@gmail.com</span>
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group">
+                <a href="https://www.linkedin.com/in/nithish-pitla/" target="_blank" rel="noreferrer" className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group whitespace-nowrap">
                   <div className="w-12 h-12 rounded-full bg-background border border-border flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary/5 transition-all">
                     <Linkedin className="w-5 h-5" />
                   </div>
                   <span className="text-lg">linkedin.com/in/nithishpitla</span>
                 </a>
-                <a href="https://github.com" target="_blank" rel="noreferrer" className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group">
+                {/* <a href="https://github.com" target="_blank" rel="noreferrer" className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group">
                   <div className="w-12 h-12 rounded-full bg-background border border-border flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary/5 transition-all">
                     <Github className="w-5 h-5" />
                   </div>
                   <span className="text-lg">github.com/nithishpitla</span>
-                </a>
+                </a> */}
               </div>
             </div>
           </motion.div>
 
-          <motion.div 
+          {/* <motion.div 
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -139,7 +139,7 @@ export function Contact() {
                 </form>
               </CardContent>
             </Card>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>

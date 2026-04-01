@@ -47,3 +47,38 @@ Thumbs.db
 # Replit
 .cache/
 .local/
+
+# environment files
+.env
+.env.*
+!.env.example
+
+# logs
+*.log
+pnpm-debug.log*
+yarn-debug.log*
+lerna-debug.log*
+
+# package manager stores
+.pnpm-store/
+.npm/
+.yarn/
+
+# test artifacts
+.nyc_output/
+playwright-report/
+test-results/
+
+# framework / bundler caches and outputs
+.vite/
+.next/
+.nuxt/
+.svelte-kit/
+build/
+dist/
+
+# TypeScript and lint caches
+.eslintcache
+
+# local editor / cursor state
+.cursor/

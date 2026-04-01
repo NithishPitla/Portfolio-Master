@@ -118,9 +118,14 @@ export function Hero() {
                 View My Work
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button size="lg" variant="outline" className="text-base h-14 px-8 rounded-full bg-background/50 backdrop-blur-md shimmer-button border-border/50 hover:bg-muted" onClick={() => alert("Resume download simulated!")}>
-                <Download className="mr-2 w-5 h-5" />
-                Download Resume
+              <Button size="lg" variant="outline" asChild className="text-base h-14 px-8 rounded-full bg-background/50 backdrop-blur-md shimmer-button border-border/50 hover:bg-muted">
+                <a
+                  href={`${import.meta.env.BASE_URL}Nithish%20Pitla%20-%20Senior%20Full%20Stack%20Developer%20Resume.pdf`}
+                  download
+                >
+                  <Download className="mr-2 w-5 h-5" />
+                  Download Resume
+                </a>
               </Button>
             </motion.div>
 

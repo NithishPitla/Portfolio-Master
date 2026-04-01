@@ -8,6 +8,25 @@ import { createPortal } from "react-dom";
 
 const projects = [
   {
+    title: "First Steps - Onboarding Application",
+    description: "Employee onboarding web application that streamlines new-hire journeys with structured, role-based guidance.",
+    impact: "Improved onboarding engagement · Faster HR operations",
+    thumbnail: { gradient: "from-amber-500/80 via-orange-500/60 to-rose-600/80", icon: Users, label: "Employee Onboarding" },
+    tags: ["React", "Vite", "TypeScript", "Node.js", "Azure"],
+    demoLink: "#",
+    githubLink: "#",
+    caseStudy: {
+      problem: "Manual onboarding workflows were inconsistent, time-consuming for HR teams, and lacked visibility into new-hire progress.",
+      solution: "Built First Steps as a React (Vite + TypeScript) and Node.js onboarding SPA with session handling, role-based routing, dynamic maintenance controls, and an HR dashboard with analytics plus a customizable workflow builder.",
+      impactMetrics: [
+        "Improved new-hire onboarding engagement",
+        "Streamlined onboarding process with structured guidance",
+        "Role-based onboarding flows for secure access",
+        "HR analytics and customizable workflow management"
+      ]
+    }
+  },
+  {
     title: "Dossier Digi Locker",
     description: "A secure, highly available document management system designed for enterprise compliance and rapid retrieval.",
     impact: "99.9% uptime · 35% faster retrieval",
@@ -143,11 +162,11 @@ function ProjectCard({ project, onViewCaseStudy }: { project: typeof projects[0]
           <Button variant="default" size="sm" onClick={onViewCaseStudy} className="rounded-full px-5 text-sm flex-1">
             View Case Study
           </Button>
-          <Button variant="outline" size="sm" asChild className="rounded-full px-4 bg-background">
+          {/* <Button variant="outline" size="sm" asChild className="rounded-full px-4 bg-background">
             <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
               <Github className="w-4 h-4" />
             </a>
-          </Button>
+          </Button> */}
         </CardFooter>
       </Card>
     </motion.div>

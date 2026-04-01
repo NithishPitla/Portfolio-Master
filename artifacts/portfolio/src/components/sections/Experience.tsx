@@ -6,35 +6,71 @@ const experiences = [
     role: "Senior Full Stack Developer / Product Lead",
     company: "Hexaware Technologies",
     logoText: "HT",
-    period: "2020 - Present",
+    period: "Aug 2022 - Present",
     achievements: [
-      "Led a 4-person engineering team to deliver 3 mission-critical enterprise applications.",
-      "Architected backend services reducing response times by 40% across major endpoints.",
-      "Integrated Azure OpenAI solutions resulting in massive efficiency gains for HR clients.",
-      "Established CI/CD pipelines reducing deployment time from hours to minutes."
+      "Architecting and leading development of scalable web platforms using React, Node.js, and Azure services.",
+      "Designed and implemented REST APIs with secure authentication and optimized PostgreSQL queries.",
+      "Led a 5-member development team, managing end-to-end delivery and stakeholder communication.",
+      "Improved application performance by 35% through frontend optimization and efficient API design.",
+      "Integrated AI-based modules using Azure OpenAI to automate HR workflows and improve productivity."
     ]
   },
   {
     role: "Full Stack Developer",
-    company: "GGS Technologies",
+    company: "GGS Technologies (Client - HAL)",
     logoText: "GG",
-    period: "2018 - 2020",
+    period: "Apr 2021 - Aug 2022",
     achievements: [
-      "Built and maintained scalable REST APIs using Node.js and Express.",
-      "Migrated legacy frontend architectures to modern React, improving core web vitals.",
-      "Optimized PostgreSQL queries, achieving a 35% performance improvement in reporting.",
-      "Collaborated closely with UX designers to implement pixel-perfect interfaces."
+      "Designed and developed a full-stack training configurator platform using React and Node.js.",
+      "Built modular APIs and integrated frontend with backend services for seamless configuration workflows.",
+      "Optimized data flow and reduced configuration time significantly through efficient architecture."
+    ]
+  },
+  {
+    role: "Full Stack / Unity Developer",
+    company: "WoWExp Technologies",
+    logoText: "WX",
+    period: "Oct 2019 - Apr 2020",
+    achievements: [
+      "Developed interactive applications integrating frontend dashboards with backend services.",
+      "Contributed to system design and implementation for client-facing solutions."
+    ]
+  },
+  {
+    role: "Software Engineer",
+    company: "Cyient Ltd",
+    logoText: "CY",
+    period: "Dec 2018 - Oct 2019",
+    achievements: [
+      "Developed enterprise-level applications and simulation tools for aerospace clients.",
+      "Collaborated with cross-functional teams to deliver high-quality solutions within deadlines."
+    ]
+  },
+  {
+    role: "Software Developer",
+    company: "CHRP India Pvt Ltd",
+    logoText: "CI",
+    period: "Mar 2018 - Sep 2018",
+    achievements: [
+      "Built industrial training and enterprise applications with a focus on usability and performance."
+    ]
+  },
+  {
+    role: "Unity Developer",
+    company: "Puffythumb Game Studio Pvt Ltd",
+    logoText: "PG",
+    period: "Nov 2016 - Dec 2017",
+    achievements: [
+      "Developed 10+ mobile applications with over 1M downloads."
     ]
   },
   {
     role: "Junior Developer",
-    company: "Various Startups",
-    logoText: "🚀",
-    period: "2015 - 2018",
+    company: "Laxmimayee Technologies",
+    logoText: "LT",
+    period: "Sep 2015 - Oct 2016",
     achievements: [
-      "Developed interactive UI components and widgets.",
-      "Assisted in database schema design and API integration.",
-      "Gained foundational experience in agile methodologies and full-stack environments."
+      "Developed mobile applications and simulation-based solutions using C# and Unity."
     ]
   }
 ];
